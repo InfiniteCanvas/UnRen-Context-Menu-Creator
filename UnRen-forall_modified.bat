@@ -141,6 +141,7 @@ if exist "lib\pythonlib2.7" (
 	set "PYTHONPATH=%cd%\lib\python3.9"
 )
 
+
 :menu
 REM --------------------------------------------------------------------------------
 REM Menu selection
@@ -157,6 +158,7 @@ echo [92m 7) Deobfuscate Decompile rpyc files[0m
 echo [92m 8) Extract and Decompile[0m
 echo [92m 9) All of the above[0m
 echo [92m 10) Decompile rpyc files new renpy 7 and higher [0m
+echo [92m 11) Add 0x52_URM [0m
 echo.
 set /p option=.  Enter a number:
 echo.
@@ -172,7 +174,20 @@ if "%option%"=="7" call :decompile
 if "%option%"=="8" call :extract
 if "%option%"=="9" call :extract
 if "%option%"=="10" call :decompile
+if "%option%"=="11" call :urm
 call :init
+
+:urm
+REM --------------------------------------------------------------------------------
+REM Download 0x52_URM
+REM --------------------------------------------------------------------------------
+set URL="https://api.0x52.dev/modversions/1222/download"
+set OUT="%gamedir%0x52_URM.rpa"
+echo	Downloading 0x52_URM.rpa to %OUT%
+powershell.exe -Command ^
+  "(New-Object System.Net.WebClient).DownloadFile('%URL%','%OUT%')"
+call :finish
+exit /b
 
 :extract
 REM --------------------------------------------------------------------------------
