@@ -182,10 +182,11 @@ REM ----------------------------------------------------------------------------
 REM Download 0x52_URM
 REM --------------------------------------------------------------------------------
 set URL="https://api.0x52.dev/modversions/1222/download"
-set OUT="%gamedir%0x52_URM.rpa"
-echo	Downloading 0x52_URM.rpa to %OUT%
-powershell.exe -Command ^
-  "(New-Object System.Net.WebClient).DownloadFile('%URL%','%OUT%')"
+set OUTZIP="%gamedir%0x52_URM.zip"
+echo	Downloading 0x52_URM.zip to %OUTZIP%
+powershell.exe -nologo -noprofile -noninteractive -command "(New-Object System.Net.WebClient).DownloadFile('%URL%','%OUTZIP%')"
+powershell.exe -nologo -noprofile -noninteractive -command "Expand-Archive -Force '%OUTZIP%' '%gamedir%'"
+del "%OUTZIP%"
 call :finish
 exit /b
 
