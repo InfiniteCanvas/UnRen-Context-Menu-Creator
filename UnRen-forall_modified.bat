@@ -57,8 +57,7 @@ echo [91m    / / / /___  / __ \___  ____    / /_  ____ _/ /_[0m
 echo [91m   / / / / __ \/ /_/ / _ \/ __ \  / __ \/ __ ^`/ __/[0m
 echo [91m  / /_/ / / / / _^, _/  __/ / / / / /_/ / /_/ / /_[0m
 echo [91m  \____/_/ /_/_/ ^|_^|\___/_/ /_(_)_.___/\__^,_/\__/ - %version%[0m
-echo [91m  Sam @ www.f95zone.to ^& Gideon ^& master861 [0m
-echo [91m  Are Spezial Thx to Madeddy for his fix with renpy and the mp error [0m
+echo [91m  f95zone.to/threads/92717/ [0m
 echo.
 echo  ----------------------------------------------------
 echo.
@@ -181,7 +180,7 @@ call :init
 REM --------------------------------------------------------------------------------
 REM Download 0x52_URM
 REM --------------------------------------------------------------------------------
-set URL="https://api.0x52.dev/modversions/1222/download"
+set URL="https://api.0x52.dev/modversions/1223/download"
 set OUTZIP="%gamedir%0x52_URM.zip"
 echo	Downloading 0x52_URM.zip to %OUTZIP%
 powershell.exe -nologo -noprofile -noninteractive -command "(New-Object System.Net.WebClient).DownloadFile('%URL%','%OUTZIP%')"
