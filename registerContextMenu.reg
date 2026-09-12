@@ -1,0 +1,8 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_CLASSES_ROOT\Directory\shell\_UnRen]
+@="&Run UnRen Script"
+"Icon"="%SystemRoot%\\System32\\shell32.dll,71"
+
+[HKEY_CLASSES_ROOT\Directory\shell\_UnRen\command]
+@="\"C:\\Users\\chana\\AppData\\Local\\UnRen-ContextMenu\\runUnRen.bat\" \"%1\""
